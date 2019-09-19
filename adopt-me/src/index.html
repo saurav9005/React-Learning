@@ -1,4 +1,4 @@
-<<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -9,14 +9,33 @@
 </head>
 <body>
 <div id="root">not render</div>
-<script src="htpps://unpkg.com/react@16.8.4/umd/react.development.js"></script>
-<script src="htpps://unpkg.com/react-dom@16.8.4/umd/react-dom.development.js"></script>
+<div id="boot">not render</div>
+<script src="https://unpkg.com/react@16.8.4/umd/react.development.js"></script>
+<script src="https://unpkg.com/react-dom@16.8.4/umd/react-dom.development.js"></script>
 <script>
+const Bpp = () => {
+  return React.createElement(
+    "p",
+    {},
+    React.createElement("span", {}, "I love react")
+  )
+}
+ReactDOM.render(
+  React.createElement(Bpp),
+  document .getElementById("boot")
+)
   const App = () => {
     return React.createElement(
       "div",
-    )
-  }
+      {},
+      React.createElement("h1", {}, "Adopt Me!")
+    );
+  };
+  ReactDOM.render(
+    React.createElement(App),
+    document.getElementById("root")
+  );
+
 </script>
 </body>
 </html>
